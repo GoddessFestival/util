@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../dist/util.js"></script>
+</head>
+
+<body>
+    资源引用者:
+    <script>
+        console.log(Util)
+    </script>
+    <script>
+        // 预编译-变量提升和函数体提升
+        // 变量x提升
+        // 函数体提升：发现x已声明，覆盖
+        console.log(typeof x); // function
+        var x = '变量赋值'; // 
+        function x() {
+            // 函数体提升
+        }
+        console.log(typeof x); // string - 变量赋值
+
+    </script>
+
+    <script>
+        console.log("========== 预编译 ===========");
+        console.log(typeof foo);  // undefined 预编译-函数体提升
+        if (false) {
+            function foo() { }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
